@@ -17,7 +17,7 @@ class UserTechGuard extends SessionGuard
         try {
             $check = DB::table('users')->where(['email' => $credentials['email']])->first();
             
-            if($check && $check->role_module == 1) {
+            if($check && $check->role == 1) {
                 $service = new EnvatoService();
                 $file_path = storage_path('.envapplicationKeyforverifywhichcomesfromenv');
 
