@@ -4,7 +4,7 @@
 [![Issues](https://img.shields.io/github/issues/syedbacchu/php-laravel.svg?style=flat-square)](https://github.com/syedbacchu/php-laravel)
 [![Stars](https://img.shields.io/github/stars/syedbacchu/php-laravel.svg?style=social)](https://github.com/syedbacchu/php-laravel)
 [![Stars](https://img.shields.io/github/forks/syedbacchu/php-laravel?style=flat-square)](https://github.com/syedbacchu/php-laravel)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/php-laravels.svg?style=flat-square)](https://packagist.org/packages/laravel/php-laravel)
+[![Total Downloads](https://img.shields.io/packagist/dt/phplaravel/php-laravel.svg?style=flat-square)](https://packagist.org/packages/laravel/php-laravel)
 
 - [About](#about)
 - [Requirements](#requirements)
