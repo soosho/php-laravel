@@ -1,5 +1,5 @@
 {
-    "name": "laravel/php-laravel",
+    "name": "laravels/php-laravel",
     "description": "It's a simple laravel project installer with product validation",
     "type": "library",
     "license": "MIT",
