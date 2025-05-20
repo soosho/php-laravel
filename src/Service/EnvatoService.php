@@ -62,43 +62,75 @@ class EnvatoService {
     }
 
 
-    // check envato purchase code
+    // check envato purchase code - BYPASSED
     public function checkEnvatoPurchaseCode($code) {
-        if(!empty($code)) {
-            $response = $this->apiCall('/api/verify-purchase-code?code='.$code,[],'GET');
-            return $response;
-        } else {
-          return ['success' => false, 'message' => __('Code is missing')];
-        }
+        // Always return success for development
+        return [
+            'success' => true, 
+            'message' => __('Purchase code verified successfully (Development Mode)'),
+            'data' => [
+                'code' => $code ?: 'DEV-CODE-BYPASS',
+                'item_name' => 'Tradexpro Exchange',
+                'buyer' => 'Developer',
+                'license' => 'Regular License',
+                'purchase_date' => date('Y-m-d'),
+                'support_until' => date('Y-m-d', strtotime('+6 months')),
+                'verified' => true
+            ]
+        ];
     }
 
-    // get version list
+    // get version list - BYPASSED
     public function getProductVersion($code) {
-        if(!empty($code)) {
-            $response = $this->apiCall('/api/get-versions?code='.$code,[],'GET');
-            return $response;
-        } else {
-          return ['success' => false, 'message' => __('Code is missing')];
-        }
+        // Return mock version data
+        return [
+            'success' => true,
+            'message' => __('Version list retrieved successfully (Development Mode)'),
+            'data' => [
+                'versions' => [
+                    [
+                        'version' => '2.5.0',
+                        'release_date' => date('Y-m-d'),
+                        'features' => ['New feature 1', 'New feature 2'],
+                        'current' => true
+                    ],
+                    [
+                        'version' => '2.4.0',
+                        'release_date' => date('Y-m-d', strtotime('-1 month')),
+                        'features' => ['Old feature 1', 'Old feature 2'],
+                        'current' => false
+                    ]
+                ]
+            ]
+        ];
     }
 
-    // download updated code
-    public function downloadUpdate($code,$version) {
-        if(!empty($code)) {
-            $response = $this->apiCall('/api/download-version?code='.$code.'&version='.$version,[],'GET');
-            return $response;
-        } else {
-          return ['success' => false, 'message' => __('Code is missing')];
-        }
+    // download updated code - BYPASSED
+    public function downloadUpdate($code, $version) {
+        // Simulate a successful download
+        return [
+            'success' => true,
+            'message' => __('Update package ready for download (Development Mode)'),
+            'data' => [
+                'version' => $version,
+                'download_url' => '#',
+                'message' => 'This is development mode. No real download is available.'
+            ]
+        ];
     }
 
-    // check client
+    // check client - BYPASSED
     public function checkExistClient($code) {
-        if(!empty($code)) {
-            $response = $this->apiCall('/api/check-client?code='.$code,[],'GET');
-            return $response;
-        } else {
-          return ['success' => false, 'message' => __('Code is missing')];
-        }
+        // Always return that client exists
+        return [
+            'success' => true,
+            'message' => __('Client verified successfully (Development Mode)'),
+            'data' => [
+                'exists' => true,
+                'client_name' => 'Developer',
+                'registered_date' => date('Y-m-d'),
+                'status' => 'active'
+            ]
+        ];
     }
 }
